@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0.0",
+  "version": "0.1.0.0-beta",
   "description": "Lightweight reflection helper library with emphasis on speed",
   "authors": [ "Daniel Alan Hill" ],
   "tags": [ "Reflection" ],
