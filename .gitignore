@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/packages
+/src/ConsoleApp1/bin
+*.user
+/src/DanielAHill.Reflection/project.lock.json
+project.lock.json
+/artifacts/bin/DanielAHill.Reflection/Release

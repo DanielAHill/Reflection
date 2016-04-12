@@ -1,0 +1,23 @@
+{
+  "version": "0.1.0.0",
+  "description": "Lightweight reflection helper library with emphasis on speed",
+  "authors": [ "Daniel Alan Hill" ],
+  "tags": [ "Reflection" ],
+  "projectUrl": "https://github.com/DanielAHill/Reflection",
+  "licenseUrl": "https://raw.githubusercontent.com/DanielAHill/Reflection/master/LICENSE",
+  "copyright": "(C)2016 Daniel Alan Hill",
+  "dependencies": {
+  },
+  "frameworks": {
+    "net451": {
+      "dependencies": {
+      }
+    },
+    "dotnet5.4": {
+      "dependencies": {
+        "Microsoft.CSharp": "4.0.1-beta-23516",
+        "System.Collections.Concurrent": "4.0.11-beta-23516"
+      }
+    }
+  }
+}
