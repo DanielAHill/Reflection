@@ -2,9 +2,9 @@
 Lightweight reflection helper library with emphasis on speed by reducing reflection calls through caching and inline compilation.
 
 ## Build Status
-| Master | Beta | Alpha | Development |
-|--------|------|-------|-------------|
-| | ![Beta Build Status](https://danielahill.visualstudio.com/DefaultCollection/_apis/public/build/definitions/01357b42-fd89-449b-86ba-c3ce8ee41bbb/3/badge) | | |
+| Master | Beta | Alpha |
+|--------|------|-------|
+| ![Master Build Status](https://danielahill.visualstudio.com/DefaultCollection/_apis/public/build/definitions/01357b42-fd89-449b-86ba-c3ce8ee41bbb/4/badge) | ![Beta Build Status](https://danielahill.visualstudio.com/DefaultCollection/_apis/public/build/definitions/01357b42-fd89-449b-86ba-c3ce8ee41bbb/3/badge) | ![Alpha Build Status](https://danielahill.visualstudio.com/DefaultCollection/_apis/public/build/definitions/01357b42-fd89-449b-86ba-c3ce8ee41bbb/5/badge)|
 
 ## Feature Overview
  - Cached Information on Object Properties
