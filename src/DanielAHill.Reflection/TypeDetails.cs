@@ -35,7 +35,7 @@ namespace DanielAHill.Reflection
         {
             Type = type;
             DefaultValue = defaultValue;
-            PropertyReaders = propertyReaders;
+            PropertyReaders = propertyReaders;  
             PropertyWriters = propertyWriters;
             IsCollection = type != typeof (string) && typeof (IEnumerable).GetTypeInfo().IsAssignableFrom(type.GetTypeInfo());
         }

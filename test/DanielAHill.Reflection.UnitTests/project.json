@@ -16,15 +16,6 @@
       "dependencies": {
       }
     },
-    "dnx46": {
-      "frameworkAssemblies": {
-        "System.ComponentModel.DataAnnotations": "4.0.0.0",
-        "System.Threading": "4.0.0.0",
-        "System.Linq": "4.0.0.0"
-      },
-      "dependencies": {
-      }
-    },
     "dnxcore50": {
       "dependencies": {
         "Microsoft.CSharp": "4.0.1-beta-23516",
