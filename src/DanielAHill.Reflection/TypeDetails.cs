@@ -44,8 +44,8 @@ namespace DanielAHill.Reflection
                       || ValueTypes.Contains(Type)
                       || PropertyReaders.Count + PropertyWriters.Count == 0
                       || (typeInfo.IsGenericType && typeInfo.GetGenericTypeDefinition() == typeof(Nullable<>) &&
-                            (type.GetGenericArguments()[0].GetTypeInfo().IsValueType
-                            || ValueTypes.Contains(type.GetGenericArguments()[0])));
+                            (typeInfo.GetGenericArguments()[0].GetTypeInfo().IsValueType
+                            || ValueTypes.Contains(typeInfo.GetGenericArguments()[0])));
         }
 
         private static readonly HashSet<Type> ValueTypes = new HashSet<Type>

@@ -39,7 +39,7 @@ namespace DanielAHill.Reflection
             var readibles = new List<IPropertyReader>();
             var writables = new List<IPropertyWriter>();
 
-            foreach (var pi in type.GetProperties())
+            foreach (var pi in type.GetTypeInfo().GetProperties())
             {
                 var propertyInfo = CreatePropertyAccessor(type, pi);
 
