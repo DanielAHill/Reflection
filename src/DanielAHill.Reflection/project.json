@@ -2,19 +2,10 @@
   "authors": [ "Daniel A Hill" ],
   "version": "0.2.0.0",
   "dependencies": {
-    "NETStandard.Library": "1.6.0"
+    "NETStandard.Library": "1.6.1"
   },
   "frameworks": {
-    "netstandard1.6": {
-      "imports": [
-        "dnxcore50",
-        "portable-net45+win8"
-      ]
-    },
-    "netcoreapp1.0": {
-      "imports": "dnxcore50"
-    },
-    "net4.5": {},
-    "dnxcore50": {}
+    "netstandard1.6": {},
+    "net45": {}
   }
 }
