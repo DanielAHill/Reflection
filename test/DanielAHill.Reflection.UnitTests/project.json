@@ -3,10 +3,10 @@
   "version": "1.0.0.0",
   "testRunner": "xunit",
   "dependencies": {
-    "DanielAHill.Reflection": "0.2.0.0",
+    "DanielAHill.Reflection": "0.1.0.0",
     "xunit.runner.visualstudio": "2.1.0",
     "dotnet-test-xunit": "1.0.0-*",
-    "System.Runtime": "4.3.0",
+    "System.Runtime": "4.0.0",
     "xunit": "2.1.0"
   },
   "frameworks": {
