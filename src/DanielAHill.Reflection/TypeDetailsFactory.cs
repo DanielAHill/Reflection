@@ -17,6 +17,7 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
@@ -108,13 +109,21 @@ namespace DanielAHill.Reflection
                 return null;
             }
 
+            var getMethod = propertyInfo.GetGetMethod();
+
+            if (getMethod.IsStatic)
+            {
+                // No statics
+                return null;
+            }
+
             var itemParameter = Expression.Parameter(typeof(object), "item");
 
             try
             {
                 var expression = Expression.TypeAs(
                                             Expression.Call(
-                                                Expression.Convert(itemParameter, type), propertyInfo.GetGetMethod())
+                                                Expression.Convert(itemParameter, type), getMethod)
                                             , typeof(object));
 
                 return Expression.Lambda<Func<object, object>>(expression, itemParameter).Compile();
@@ -134,6 +143,14 @@ namespace DanielAHill.Reflection
             if (propertyInfo.GetIndexParameters().Length > 0)
             {
                 // No Indexors
+                return null;
+            }
+
+            var setMethod = propertyInfo.GetGetMethod();
+
+            if (setMethod.IsStatic)
+            {
+                // No statics
                 return null;
             }
 

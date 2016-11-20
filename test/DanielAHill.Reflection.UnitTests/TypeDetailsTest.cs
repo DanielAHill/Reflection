@@ -150,6 +150,12 @@ namespace DanielAHill.Reflection.UnitTests
 
             Assert.Equal(item.Object, details.PropertyReaders.First(r => r.Name.Equals("Object")).Read(item));
         }
+
+        [Fact]
+        public void TypeDetailsOfDateTime()
+        {
+            Assert.NotNull(typeof (DateTime).GetTypeDetails());
+        }
     }
 
     public class ClassContainingAllBasicPropertyTypes
