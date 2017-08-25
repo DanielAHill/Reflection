@@ -14,32 +14,33 @@
 // limitations under the License.
 #endregion
 
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Linq;
-using Xunit;
 
 namespace DanielAHill.Reflection.UnitTests
 {
+    [TestClass]
     public class TypeDetailsTest
     {
-        [Fact]
+        [TestMethod]
         public void ValueTypes()
         {
             var details = typeof(string).GetTypeDetails();
-            Assert.True(details.IsValue);
-            Assert.False(details.IsNumeric);
-            Assert.False(details.IsCollection);
-            Assert.Equal(0, details.PropertyWriters.Count);
-            Assert.Equal(1, details.PropertyReaders.Count);
-            Assert.Null(details.DefaultValue);
+            Assert.IsTrue(details.IsValue);
+            Assert.IsFalse(details.IsNumeric);
+            Assert.IsFalse(details.IsCollection);
+            Assert.AreEqual(0, details.PropertyWriters.Count);
+            Assert.AreEqual(1, details.PropertyReaders.Count);
+            Assert.IsNull(details.DefaultValue);
 
             details = typeof (int).GetTypeDetails();
-            Assert.True(details.IsValue);
-            Assert.True(details.IsNumeric);
-            Assert.False(details.IsCollection);
-            Assert.Equal(0, details.PropertyWriters.Count);
-            Assert.Equal(0, details.PropertyReaders.Count);
-            Assert.Equal(0, details.DefaultValue);
+            Assert.IsTrue(details.IsValue);
+            Assert.IsTrue(details.IsNumeric);
+            Assert.IsFalse(details.IsCollection);
+            Assert.AreEqual(0, details.PropertyWriters.Count);
+            Assert.AreEqual(0, details.PropertyReaders.Count);
+            Assert.AreEqual(0, details.DefaultValue);
         }
 
         public void ByteArray()
@@ -48,7 +49,7 @@ namespace DanielAHill.Reflection.UnitTests
             throw new NotImplementedException();
         }
 
-        [Fact]
+        [TestMethod]
         public void CanSetAllPropertyTypes()
         {
             var item = new ClassContainingAllBasicPropertyTypes();
@@ -78,33 +79,33 @@ namespace DanielAHill.Reflection.UnitTests
             details.PropertyWriters.First(p => p.Name.Equals("String")).Write(item, "my string");
             details.PropertyWriters.First(p => p.Name.Equals("Object")).Write(item, new ClassContainingAllBasicPropertyTypes() { String = "My Written Object" });            
 
-            Assert.NotNull(item);
-            Assert.Equal((byte)5, item.Byte);
-            Assert.Equal((short)55, item.Short);
-            Assert.Equal(5433, item.Int);
-            Assert.Equal((long)52334343, item.Long);
-            Assert.Equal((float)643.44, item.Float);
-            Assert.Equal(35.323, item.Double);
-            Assert.Equal((decimal)234.2343, item.Decimal);
-            Assert.Equal(guid, item.Guid);
+            Assert.IsNotNull(item);
+            Assert.AreEqual((byte)5, item.Byte);
+            Assert.AreEqual((short)55, item.Short);
+            Assert.AreEqual(5433, item.Int);
+            Assert.AreEqual((long)52334343, item.Long);
+            Assert.AreEqual((float)643.44, item.Float);
+            Assert.AreEqual(35.323, item.Double);
+            Assert.AreEqual((decimal)234.2343, item.Decimal);
+            Assert.AreEqual(guid, item.Guid);
 
-            Assert.Equal((byte)5, item.NullableByte);
-            Assert.Equal((short)55, item.NullableShort);
-            Assert.Equal(5433, item.NullableInt);
-            Assert.Equal((long)52334343, item.NullableLong);
-            Assert.Equal((float)643.44, item.NullableFloat);
-            Assert.Equal(35.323, item.NullableDouble);
-            Assert.Equal((decimal)234.2343, item.NullableDecimal);
-            Assert.Equal(guid, item.NullableGuid);
+            Assert.AreEqual((byte)5, item.NullableByte);
+            Assert.AreEqual((short)55, item.NullableShort);
+            Assert.AreEqual(5433, item.NullableInt);
+            Assert.AreEqual((long)52334343, item.NullableLong);
+            Assert.AreEqual((float)643.44, item.NullableFloat);
+            Assert.AreEqual(35.323, item.NullableDouble);
+            Assert.AreEqual((decimal)234.2343, item.NullableDecimal);
+            Assert.AreEqual(guid, item.NullableGuid);
 
-            Assert.Equal('r', item.Char);
-            Assert.Equal("my string", item.String);
-            Assert.NotNull(item.Object);
-            Assert.Equal("My Written Object", item.Object.String);
-            Assert.Null(item.Object.Object);
+            Assert.AreEqual('r', item.Char);
+            Assert.AreEqual("my string", item.String);
+            Assert.IsNotNull(item.Object);
+            Assert.AreEqual("My Written Object", item.Object.String);
+            Assert.IsNull(item.Object.Object);
         }
 
-        [Fact]
+        [TestMethod]
         public void CanReadAllPropertyTypes()
         {
             var item = new ClassContainingAllBasicPropertyTypes()
@@ -130,25 +131,25 @@ namespace DanielAHill.Reflection.UnitTests
             item.Object = item;
             var details = item.GetTypeDetails();
 
-            Assert.Equal(item.Byte, details.PropertyReaders.First(r => r.Name.Equals("Byte")).Read(item));
-            Assert.Equal(item.Short, details.PropertyReaders.First(r => r.Name.Equals("Short")).Read(item));
-            Assert.Equal(item.Int, details.PropertyReaders.First(r => r.Name.Equals("Int")).Read(item));
-            Assert.Equal(item.Long, details.PropertyReaders.First(r => r.Name.Equals("Long")).Read(item));
-            Assert.Equal(item.Float, details.PropertyReaders.First(r => r.Name.Equals("Float")).Read(item));
-            Assert.Equal(item.Double, details.PropertyReaders.First(r => r.Name.Equals("Double")).Read(item));
-            Assert.Equal(item.Decimal, details.PropertyReaders.First(r => r.Name.Equals("Decimal")).Read(item));
-            Assert.Equal(item.Guid, details.PropertyReaders.First(r => r.Name.Equals("Guid")).Read(item));
+            Assert.AreEqual(item.Byte, details.PropertyReaders.First(r => r.Name.Equals("Byte")).Read(item));
+            Assert.AreEqual(item.Short, details.PropertyReaders.First(r => r.Name.Equals("Short")).Read(item));
+            Assert.AreEqual(item.Int, details.PropertyReaders.First(r => r.Name.Equals("Int")).Read(item));
+            Assert.AreEqual(item.Long, details.PropertyReaders.First(r => r.Name.Equals("Long")).Read(item));
+            Assert.AreEqual(item.Float, details.PropertyReaders.First(r => r.Name.Equals("Float")).Read(item));
+            Assert.AreEqual(item.Double, details.PropertyReaders.First(r => r.Name.Equals("Double")).Read(item));
+            Assert.AreEqual(item.Decimal, details.PropertyReaders.First(r => r.Name.Equals("Decimal")).Read(item));
+            Assert.AreEqual(item.Guid, details.PropertyReaders.First(r => r.Name.Equals("Guid")).Read(item));
 
-            Assert.Equal(item.NullableByte, details.PropertyReaders.First(r => r.Name.Equals("NullableByte")).Read(item));
-            Assert.Equal(item.NullableShort, details.PropertyReaders.First(r => r.Name.Equals("NullableShort")).Read(item));
-            Assert.Equal(item.NullableInt, details.PropertyReaders.First(r => r.Name.Equals("NullableInt")).Read(item));
-            Assert.Equal(item.NullableLong, details.PropertyReaders.First(r => r.Name.Equals("NullableLong")).Read(item));
-            Assert.Equal(item.NullableFloat, details.PropertyReaders.First(r => r.Name.Equals("NullableFloat")).Read(item));
-            Assert.Equal(item.NullableDouble, details.PropertyReaders.First(r => r.Name.Equals("NullableDouble")).Read(item));
-            Assert.Equal(item.NullableDecimal, details.PropertyReaders.First(r => r.Name.Equals("NullableDecimal")).Read(item));
-            Assert.Equal(item.NullableGuid, details.PropertyReaders.First(r => r.Name.Equals("NullableGuid")).Read(item));
+            Assert.AreEqual(item.NullableByte, details.PropertyReaders.First(r => r.Name.Equals("NullableByte")).Read(item));
+            Assert.AreEqual(item.NullableShort, details.PropertyReaders.First(r => r.Name.Equals("NullableShort")).Read(item));
+            Assert.AreEqual(item.NullableInt, details.PropertyReaders.First(r => r.Name.Equals("NullableInt")).Read(item));
+            Assert.AreEqual(item.NullableLong, details.PropertyReaders.First(r => r.Name.Equals("NullableLong")).Read(item));
+            Assert.AreEqual(item.NullableFloat, details.PropertyReaders.First(r => r.Name.Equals("NullableFloat")).Read(item));
+            Assert.AreEqual(item.NullableDouble, details.PropertyReaders.First(r => r.Name.Equals("NullableDouble")).Read(item));
+            Assert.AreEqual(item.NullableDecimal, details.PropertyReaders.First(r => r.Name.Equals("NullableDecimal")).Read(item));
+            Assert.AreEqual(item.NullableGuid, details.PropertyReaders.First(r => r.Name.Equals("NullableGuid")).Read(item));
 
-            Assert.Equal(item.Object, details.PropertyReaders.First(r => r.Name.Equals("Object")).Read(item));
+            Assert.AreEqual(item.Object, details.PropertyReaders.First(r => r.Name.Equals("Object")).Read(item));
         }
     }
 

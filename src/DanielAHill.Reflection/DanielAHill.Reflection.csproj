@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Authors>Daniel A Hill</Authors>
+    <Company />
+    <Description>Lightweight reflection helper library with emphasis on speed by reducing reflection calls through caching and inline compilation.</Description>
+    <PackageProjectUrl>https://github.com/DanielAHill/Reflection</PackageProjectUrl>
+    <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+    <Copyright>Copyright 2016 Daniel Alan Hill, All Rights Reserved</Copyright>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+</Project>
