@@ -1,22 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26823.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B8676AB3-0CDF-426A-B6AF-45D06CD76F17}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanielAHill.Reflection", "src\DanielAHill.Reflection\DanielAHill.Reflection.csproj", "{32A4C59C-F37B-49F3-98E4-4414369EE033}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{48CB87F6-1F7A-44C0-864A-181E159FC81F}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-		LICENSE = LICENSE
-		README.md = README.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CCCC7E75-0A31-4726-80DA-B5C6E0DA29F0}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DanielAHill.Reflection", "src\DanielAHill.Reflection\DanielAHill.Reflection.xproj", "{4CF87CFA-21FB-440C-BC2D-C8CC3E7DADFD}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DanielAHill.Reflection.UnitTests", "test\DanielAHill.Reflection.UnitTests\DanielAHill.Reflection.UnitTests.xproj", "{1202E6DE-6631-4A07-8EC1-6CFD4ACE1D1E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanielAHill.Reflection.UnitTests", "test\DanielAHill.Reflection.UnitTests\DanielAHill.Reflection.UnitTests.csproj", "{BE177216-D055-4A4B-B9B4-827A1CC58895}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,20 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4CF87CFA-21FB-440C-BC2D-C8CC3E7DADFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4CF87CFA-21FB-440C-BC2D-C8CC3E7DADFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4CF87CFA-21FB-440C-BC2D-C8CC3E7DADFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4CF87CFA-21FB-440C-BC2D-C8CC3E7DADFD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1202E6DE-6631-4A07-8EC1-6CFD4ACE1D1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1202E6DE-6631-4A07-8EC1-6CFD4ACE1D1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1202E6DE-6631-4A07-8EC1-6CFD4ACE1D1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1202E6DE-6631-4A07-8EC1-6CFD4ACE1D1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32A4C59C-F37B-49F3-98E4-4414369EE033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32A4C59C-F37B-49F3-98E4-4414369EE033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32A4C59C-F37B-49F3-98E4-4414369EE033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32A4C59C-F37B-49F3-98E4-4414369EE033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE177216-D055-4A4B-B9B4-827A1CC58895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE177216-D055-4A4B-B9B4-827A1CC58895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE177216-D055-4A4B-B9B4-827A1CC58895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE177216-D055-4A4B-B9B4-827A1CC58895}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{4CF87CFA-21FB-440C-BC2D-C8CC3E7DADFD} = {B8676AB3-0CDF-426A-B6AF-45D06CD76F17}
-		{1202E6DE-6631-4A07-8EC1-6CFD4ACE1D1E} = {CCCC7E75-0A31-4726-80DA-B5C6E0DA29F0}
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B62DDB68-E773-4AE5-8664-57986B3DF766}
 	EndGlobalSection
 EndGlobal
