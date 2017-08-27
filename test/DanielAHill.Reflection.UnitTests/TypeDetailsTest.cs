@@ -152,10 +152,10 @@ namespace DanielAHill.Reflection.UnitTests
             Assert.AreEqual(item.Object, details.PropertyReaders.First(r => r.Name.Equals("Object")).Read(item));
         }
 
-        [Fact]
+        [TestMethod]
         public void TypeDetailsOfDateTime()
         {
-            Assert.NotNull(typeof (DateTime).GetTypeDetails());
+            Assert.IsNotNull(typeof (DateTime).GetTypeDetails());
         }
     }
 
